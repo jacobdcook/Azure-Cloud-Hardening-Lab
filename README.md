@@ -30,16 +30,16 @@ This project demonstrates **Infrastructure as Code (IaC)** best practices for de
 All screenshots are stored in the `screenshots/` folder.
 
 **1) Terraform plan (proposed resources)**
-![Terraform plan](screenshots/01-terraform-plan.png)
+![Terraform plan](https://raw.githubusercontent.com/jacobdcook/Azure-Cloud-Hardening-Lab/main/screenshots/01-terraform-plan.png)
 
 **2) Hardened infrastructure overview (resource group)**
-![Resource group overview](screenshots/01-hardened-infrastructure-overview.png)
+![Resource group overview](https://raw.githubusercontent.com/jacobdcook/Azure-Cloud-Hardening-Lab/main/screenshots/01-hardened-infrastructure-overview.png)
 
 **3) NSG inbound rules (restricted to authorized IP)**
-![NSG rules](screenshots/02-hardened-nsg-rules.png)
+![NSG rules](https://raw.githubusercontent.com/jacobdcook/Azure-Cloud-Hardening-Lab/main/screenshots/02-hardened-nsg-rules.png)
 
 **4) Subnet association with NSG**
-![Subnet association](screenshots/03-subnet-security-association.png)
+![Subnet association](https://raw.githubusercontent.com/jacobdcook/Azure-Cloud-Hardening-Lab/main/screenshots/03-subnet-security-association.png)
 
 ---
-*This lab is part of my "Big Three" portfolio projects focused on Cloud Security and Automation.*
+*This lab is one of my top portfolio projects focused on Cloud Security and Automation.*
