@@ -1,7 +1,11 @@
 # Azure Cloud Hardening Lab - Main Configuration
 
 provider "azurerm" {
+  subscription_id = "279ff4ad-5c0e-4c5d-a0e9-e2100177f5ff"
   features {
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
     key_vault {
       purge_soft_delete_on_destroy = true
     }
@@ -83,7 +87,8 @@ resource "azurerm_public_ip" "pip" {
   name                = "pip-hardening-lab"
   location            = azurerm_resource_group.lab.location
   resource_group_name = azurerm_resource_group.lab.name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
+  sku                 = "Standard"
 }
 
 # Network Interface
@@ -113,7 +118,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   admin_ssh_key {
     username   = var.admin_username
-    public_key = file("~/.ssh/id_rsa.pub") # Assumes SSH key exists
+    public_key = file("/home/z1337/.ssh/id_rsa.pub")
   }
 
   os_disk {
