@@ -26,5 +26,20 @@ This project demonstrates **Infrastructure as Code (IaC)** best practices for de
 3. Update `authorized_ip` in `variables.tf`.
 4. Run `terraform init` and `terraform apply`.
 
+## Evidence (Screenshots)
+All screenshots are stored in the `screenshots/` folder.
+
+**1) Terraform plan (proposed resources)**
+![Terraform plan](screenshots/01-terraform-plan.png)
+
+**2) Hardened infrastructure overview (resource group)**
+![Resource group overview](screenshots/01-hardened-infrastructure-overview.png)
+
+**3) NSG inbound rules (restricted to authorized IP)**
+![NSG rules](screenshots/02-hardened-nsg-rules.png)
+
+**4) Subnet association with NSG**
+![Subnet association](screenshots/03-subnet-security-association.png)
+
 ---
 *This lab is part of my "Big Three" portfolio projects focused on Cloud Security and Automation.*
