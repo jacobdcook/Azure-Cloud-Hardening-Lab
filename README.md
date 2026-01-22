@@ -25,17 +25,19 @@ This project demonstrates **Infrastructure as Code (IaC)** best practices for de
 - **Managed Identity:** System-assigned identity enabled for VM access (no hardcoded credentials).
 - **Disk Encryption:** Managed disk encryption at rest (Azure default for managed disks).
 
-## 🔒 Security Focus
+## Security Focus
 
 - **Network Security Groups (NSG):** Only allows SSH/RDP traffic from a single authorized IP address.
 - **Data Encryption:** All storage accounts and managed disks are configured with AES-256 encryption at rest.
 - **Identity Management:** Managed Identities used for resource access (no hardcoded credentials).
 - **Public IP Management:** Minimized public exposure by only assigning IPs where absolutely necessary.
+- **Subnet Isolation:** Internal subnet is isolated from other network segments, providing additional defense in depth.
 
-## 🛠️ Technologies
+## Technologies
 - **Azure** (Cloud Provider)
 - **Terraform** (Infrastructure as Code)
 - **HCL** (HashiCorp Configuration Language)
+- **Azure CLI** (Authentication and resource management)
 
 ## Infrastructure Overview
 1. **Virtual Network (VNet):** Isolated network segment.
@@ -44,10 +46,12 @@ This project demonstrates **Infrastructure as Code (IaC)** best practices for de
 4. **Encryption:** Managed Disk encryption enabled by default.
 
 ## How to Deploy
-1. Install Terraform.
+1. Install Terraform and Azure CLI on your local machine.
 2. Authenticate with Azure CLI (`az login`).
-3. Update `authorized_ip` in `variables.tf`.
-4. Run `terraform init` and `terraform apply`.
+3. Update `authorized_ip` in `variables.tf` with your public IP address.
+4. Run `terraform init` to initialize the Terraform working directory.
+5. Run `terraform plan` to preview the changes.
+6. Run `terraform apply` to deploy the infrastructure.
 
 ## Notes on Azure Capacity
 Azure capacity for low-cost VM sizes can be limited by region. If VM creation fails with `SkuNotAvailable`, the network hardening portion still deploys successfully and is fully documented below. This lab focuses on secure network design and least-privilege access, which are the core hardening objectives.
